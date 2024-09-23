@@ -16,11 +16,10 @@ function getTextFieldValueById(id){
     return textNumber;
 }
 
-
 function validation(id){
     const donation = document.getElementById(id).value;
     const accountBalance = getTextFieldValueById('account-balance');
-    if (donation === "" && donation !== 'number' && donation > accountBalance){
+    if (!donation || isNaN(donation) || donation > accountBalance){
         alert('Please enter a donation amount.');
     }
     else{
@@ -53,15 +52,15 @@ function validation(id){
 function donateMoney(inputId, donateBalance){
     const accountBalance = getTextFieldValueById("account-balance");
     const donation = getInputFieldValueById(inputId);
-    if(donation > accountBalance){
-        alert('You have insufficient balance!!');
-    }
-    else{
+    if(accountBalance > donation){
         const newBalance = accountBalance - donation;
         document.getElementById('account-balance').innerText = newBalance;
         const currentBalance = getTextFieldValueById(donateBalance);
         const donationAmount = donation + currentBalance;
         document.getElementById(donateBalance).innerText = donationAmount;
+    }
+    else{
+        alert('You have insufficient balance!!');
     }
 }
 
