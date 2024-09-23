@@ -1,10 +1,7 @@
 document.getElementById('noakhali-donate-btn').addEventListener('click', function(event){
-    donateMoney('noakhali-donation-amount');
-    const currentBalance = getTextFieldValueById('noakhali-donate');
+    donateMoney('noakhali-donation-amount', 'noakhali-donate');
     const donation = getInputFieldValueById('noakhali-donation-amount');
-    const donationAmount = donation + currentBalance;
-    document.getElementById('noakhali-donate').innerText = donationAmount;
-
+    console.log(donation)
     const div = document.createElement('div');
     div.innerHTML = `
     <div class="border-[1px] border-[#1111111A] rounded-xl p-5 mb-5"><h4 class="font-bold">${donation} Taka is Donated for famine-2024 at Noakhali, Bangladesh</h4>

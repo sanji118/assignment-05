@@ -19,9 +19,9 @@ function getTextFieldValueById(id){
 
 function validation(id){
     const donation = document.getElementById(id).value;
-
-    if (donation === "" && donation !== 'number'){
-        alert('Please enter a donation amount');
+    const accountBalance = getTextFieldValueById('account-balance');
+    if (donation === "" && donation !== 'number' && donation > accountBalance){
+        alert('Please enter a donation amount.');
     }
     else{
         const div = document.createElement('div');
@@ -50,10 +50,18 @@ function validation(id){
     }
 }
 
-function donateMoney(id){
+function donateMoney(inputId, donateBalance){
     const accountBalance = getTextFieldValueById("account-balance");
-    const donation = getInputFieldValueById(id);
-    const newBalance = accountBalance - donation;
-    document.getElementById('account-balance').innerText = newBalance;
+    const donation = getInputFieldValueById(inputId);
+    if(donation > accountBalance){
+        alert('You have insufficient balance!!');
+    }
+    else{
+        const newBalance = accountBalance - donation;
+        document.getElementById('account-balance').innerText = newBalance;
+        const currentBalance = getTextFieldValueById(donateBalance);
+        const donationAmount = donation + currentBalance;
+        document.getElementById(donateBalance).innerText = donationAmount;
+    }
 }
 
