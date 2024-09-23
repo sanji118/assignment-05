@@ -17,11 +17,19 @@
         .btn-bg{
             background-color: #B4F461;
         }
+        .stick{
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        body{
+            overflow: visible;
+        }
     </style>
 </head>
 <body class="lexend">
     <header>
-        <nav class="sticky top-0 z-1000">
+        <nav class="stick">
             <section class="bg-[#F9F7F3] flex md:justify-around gap-5 p-6 items-center">
                 <div>
                     <button class="btn btn-bg" id="home-btn">Home</button>
@@ -37,7 +45,7 @@
             </section>
         </nav>
     </header>
-    <main class="p-10">
+    <main class="p-10 carousel carousel-vertical">
         <div class="flex gap-5"><p class="text-5xl font-extrabold">Important FAQ</p> <img width="60" height="60" src="https://img.icons8.com/ios/50/decision.png" alt="decision"/></div>
 
         <div class="pt-10">
