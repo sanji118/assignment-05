@@ -19,7 +19,7 @@ function getTextFieldValueById(id){
 function validation(id){
     const donation = document.getElementById(id).value;
     const accountBalance = getTextFieldValueById('account-balance');
-    if (!donation || isNaN(donation) || donation > accountBalance){
+    if (!donation || isNaN(donation) && donation > accountBalance){
         alert('Please enter a donation amount.');
     }
     else{
@@ -52,7 +52,7 @@ function validation(id){
 function donateMoney(inputId, donateBalance){
     const accountBalance = getTextFieldValueById("account-balance");
     const donation = getInputFieldValueById(inputId);
-    if(accountBalance > donation){
+    if(accountBalance >= donation){
         const newBalance = accountBalance - donation;
         document.getElementById('account-balance').innerText = newBalance;
         const currentBalance = getTextFieldValueById(donateBalance);

@@ -17,19 +17,11 @@
         .btn-bg{
             background-color: #B4F461;
         }
-        .stick{
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-        }
-        body{
-            overflow: visible;
-        }
     </style>
 </head>
 <body class="lexend">
-    <header>
-        <nav class="stick">
+    <header class="sticky top-0 z-50 bg-gradient-to-b from-[#F9F7F3] to-[#f2f1eed7]">
+        <nav>
             <section class="bg-[#F9F7F3] flex md:justify-around gap-5 p-6 items-center">
                 <div>
                     <button class="btn btn-bg" id="home-btn">Home</button>
@@ -99,7 +91,7 @@
     <script>
         document.getElementById('home-btn').addEventListener('click', function(event){
             event.preventDefault();
-            window.location.href = 'index.html';
+            window.location.href = '/index.html';
         });
     </script>
 </body>
