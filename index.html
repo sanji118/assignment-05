@@ -28,7 +28,7 @@
         <nav class="sticky top-0 z-1000">
             <section class="bg-[#F9F7F3] flex md:justify-around gap-5 p-6 items-center">
                 <div>
-                    <button class="btn btn-bg">Blog</button>
+                    <button class="btn btn-bg" id="blog-btn">Blog</button>
                 </div>
                 <div class="flex gap-4 items-center">
                     <img src="assets/logo.png" alt="">
@@ -131,6 +131,11 @@
     <script src="js/utilities.js"></script>
     <script src="js/confirmation.js"></script>
     <script src="js/moneyCalculation.js"></script>
-    <script src="js/history.js"></script>
+    <script>
+        document.getElementById('blog-btn').addEventListener('click', function(event){
+            event.preventDefault();
+            window.location.href = '/blog.html';
+        });
+    </script>
 </body>
 </html>
