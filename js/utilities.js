@@ -17,10 +17,6 @@ function getTextFieldValueById(id){
 }
 
 
-function closeConfirmation(){
-    document.getElementById('confirmation-card').innerHTML = "";
-}
-
 function validation(id){
     const donation = document.getElementById(id).value;
 
@@ -37,11 +33,20 @@ function validation(id){
                 <img src="assets/coin.png" class="w-[20px] mx-auto">
                 <p class="opacity-50">You have donated for Humankind <br> <span class="font-bold">Successfully</span></p>
                 <div class="card-actions justify-center">
-                    <button class="btn">Close Confirmation</button>
+                    <button class="btn" id="close">Close Confirmation</button>
                 </div>
                 </div>
             </div>
         `;
-        document.getElementsByClassName('confirmation-card').appendChild(div);
+        document.getElementById('confirmation-card').appendChild(div);
+        document.body.style.overflow = "hidden";
+        document.getElementById('donation-page').classList.add('card-bg');
+        document.getElementById('close').addEventListener('click', function(event){
+            document.getElementById('confirmation-card').innerHTML = "";
+            document.body.style.overflow = "auto";
+            document.getElementById('donation-page').classList.remove('card-bg');
+        });
+        
     }
 }
+
