@@ -54,6 +54,6 @@ function donateMoney(id){
     const accountBalance = getTextFieldValueById("account-balance");
     const donation = getInputFieldValueById(id);
     const newBalance = accountBalance - donation;
-    document.getElementById('account-balance').innerText = newBalance; 
+    document.getElementById('account-balance').innerText = newBalance;
 }
 
