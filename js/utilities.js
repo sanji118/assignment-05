@@ -5,7 +5,7 @@ function showSectionById(id){
 }
 
 function getInputFieldValueById(id){
-    const inputValue = document.getElementsById(id).value;
+    const inputValue = document.getElementById(id).value;
     const inputNumber = parseFloat(inputValue);
     return inputNumber;
 }
@@ -48,5 +48,12 @@ function validation(id){
         });
         
     }
+}
+
+function donateMoney(id){
+    const accountBalance = getTextFieldValueById("account-balance");
+    const donation = getInputFieldValueById(id);
+    const newBalance = accountBalance - donation;
+    document.getElementById('account-balance').innerText = newBalance; 
 }
 
